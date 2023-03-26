@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 const Projects = () => {
   const projects = [
     {
@@ -44,27 +45,27 @@ const Projects = () => {
           {projects.map(({ id, style, demo, git, name }) => (
             <div
               key={id}
-              className={`shadow-md shadow-gray-600 rounded-r-lg bg-ecom ${style}`}
+              className={`group shadow-lg shadow-blue-600 rounded-r-lg bg-ecom ${style} h-80`}
             >
-              <div className="opacity-0 hover:opacity-100 bg-blue-500 flex flex-col justify-center items-center p-4">
+              <div className="opacity-0 rounded group-hover:opacity-100 bg-blue-300 flex flex-col justify-center items-center p-4 h-80">
                 <span className="text-2xl font-bold text-white tracking-wider">
                   {name}
                 </span>
-                <div className="pt-8 text-center flex">
-                  <a href={demo} target="_blank" rel="noreferrer">
+                <div className="pt-8 text-center  ">
+                  <a href={demo}>
                     <button
-                      className="w-1/2 px-6 py-3 m-4 duration-200
-                    hover:scale-105"
+                      className=" text-center rounded-xl px-4 py-3 m-2 bg-white text-gray-700
+                    font-bold text-lg hover:scale-150"
                     >
-                      Demo
+                      Live
                     </button>
                   </a>
-                  <a href={git} target="_blank" rel="noreferrer">
+                  <a href={git}>
                     <button
-                      className="w-1/2 px-6 py-3 m-4 duration-200
-                    hover:scale-105"
+                      className="text-center rounded-xl px-4 py-3 m-2 bg-white text-gray-700
+                    font-bold text-lg  hover:scale-150 "
                     >
-                      Source code
+                      <FaGithub size={20} />
                     </button>
                   </a>
                 </div>
