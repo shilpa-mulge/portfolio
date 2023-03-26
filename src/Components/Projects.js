@@ -1,20 +1,26 @@
 import React from "react";
-import ecommerse from "../assets/ecommerse.jpg";
-import expense from "../assets/expense.jpg";
-import mailbox from "../assets/mailbox.jpg";
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      src: ecommerse,
+      style: "bg-ecom bg-cover ",
+      demo: "https://ecomerse-app-12d71.web.app/",
+      git: "https://github.com/shilpa-mulge/ecommerce-app",
+      name: "Ecommerse App",
     },
     {
       id: 2,
-      src: expense,
+      style: "bg-exp bg-cover",
+      demo: "https://expense-tracker-b91f4.web.app/",
+      git: "https://github.com/shilpa-mulge/react-expense-tracker",
+      name: "Expense Tracker App",
     },
     {
       id: 3,
-      src: mailbox,
+      style: "bg-mail bg-cover",
+      demo: "http://mail-box-client-406c3.web.app/",
+      git: "https://github.com/shilpa-mulge/mail-box-client",
+      name: "Mailbox Client",
     },
   ];
   return (
@@ -35,27 +41,33 @@ const Projects = () => {
           className="grid sm:grid-cols-2 md:grid-cols-3 gap-8
         px-12 sm:px-0"
         >
-          {projects.map(({ id, src }) => (
-            <div key={id} className="shadow-md shadow-gray-600 rounded-r-lg">
-              <img
-                src={src}
-                alt=""
-                className="rounded-md h-80 w-full
-                duration-200 hover:scale-105 "
-              />
-              <div>
-                <button
-                  className="w-1/2 px-6 py-3 m-4 duration-200
+          {projects.map(({ id, style, demo, git, name }) => (
+            <div
+              key={id}
+              className={`shadow-md shadow-gray-600 rounded-r-lg bg-ecom ${style}`}
+            >
+              <div className="opacity-0 hover:opacity-100 bg-blue-500 flex flex-col justify-center items-center p-4">
+                <span className="text-2xl font-bold text-white tracking-wider">
+                  {name}
+                </span>
+                <div className="pt-8 text-center flex">
+                  <a href={demo} target="_blank" rel="noreferrer">
+                    <button
+                      className="w-1/2 px-6 py-3 m-4 duration-200
                     hover:scale-105"
-                >
-                  Demo
-                </button>
-                <button
-                  className="w-1/2 px-6 py-3 m-4 duration-200
+                    >
+                      Demo
+                    </button>
+                  </a>
+                  <a href={git} target="_blank" rel="noreferrer">
+                    <button
+                      className="w-1/2 px-6 py-3 m-4 duration-200
                     hover:scale-105"
-                >
-                  code
-                </button>
+                    >
+                      Source code
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
